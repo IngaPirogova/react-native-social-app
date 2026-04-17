@@ -34,7 +34,6 @@ React Native • Expo • Firebase • Redux Toolkit • React Navigation • Cl
 
 ## ⚙️ Installation
 
-```bash
 git clone https://github.com/IngaPirogova/react-native-social-app
 cd your-project
 npm install
