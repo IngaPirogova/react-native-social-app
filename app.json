@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ingapie.mobileapp"
     },
     "web": {
       "output": "static",
@@ -43,6 +44,19 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "bdb94200-eff9-4275-ba50-3ec37c5586ae"
+      }
+    },
+    "owner": "ingapie",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bdb94200-eff9-4275-ba50-3ec37c5586ae"
     }
   }
 }

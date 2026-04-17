@@ -5,6 +5,14 @@ The app includes authentication, posts feed, comments system, maps integration a
 
 ---
 
+## 🔗 Links
+
+- 📱 Live App (Android): https://expo.dev/accounts/ingapie/projects/mobile-app-new/builds/2190a5ad-7143-44f2-97e2-44129025749d
+- 🎥 Demo Video: https://youtube.com/shorts/mOmeCZME4-g?feature=share
+- 💻 Source Code: https://github.com/IngaPirogova/react-native-social-app
+
+---
+
 ## 🚀 Features
 
 - User authentication (Firebase Auth)
@@ -23,13 +31,6 @@ React Native • Expo • Firebase • Redux Toolkit • React Navigation • Cl
 
 ---
 
-## 📸 Demo
-
-👉 Video demo: 
-👉 GitHub: https://github.com/IngaPirogova/react-native-social-app
-
----
-
 
 ## ⚙️ Installation
 
@@ -38,3 +39,24 @@ git clone https://github.com/IngaPirogova/react-native-social-app
 cd your-project
 npm install
 npx expo start
+
+---
+
+## 🛠 Build
+eas build --platform android
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="./screenshots/register.png" width="250"/>
+  <img src="./screenshots/login.png" width="250"/>
+  <img src="./screenshots/profile.png" width="250"/>
+  <img src="./screenshots/create.png" width="250"/>
+  <img src="./screenshots/posts.png" width="250"/>
+  <img src="./screenshots/comments.png" width="250"/>
+  <img src="./screenshots/map.png" width="250"/>  
+</p>
+
+---
