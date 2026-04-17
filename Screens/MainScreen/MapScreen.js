@@ -8,7 +8,7 @@ const MapScreen = ({ route }) => {
   if (!location) {
     return (
       <View style={styles.container}>
-        <Text>Нет координат</Text>
+        <Text>No coordinates</Text>
       </View>
     );
   }
@@ -26,7 +26,7 @@ const MapScreen = ({ route }) => {
   if (Platform.OS === "web") {
     return (
       <View style={styles.container}>
-        <Text>Карта доступна только на мобильном 📱</Text>
+        <Text>The map is only available on mobile. 📱</Text>
       </View>
     );
   }

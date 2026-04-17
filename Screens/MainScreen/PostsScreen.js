@@ -48,10 +48,10 @@ const PostsScreen = ({ navigation }) => {
   };
 
   const confirmDelete = (postId) => {
-    Alert.alert("Удаление поста", "Удалить этот пост?", [
-      { text: "Отмена", style: "cancel" },
+    Alert.alert("Delete post", "Delete this post?", [
+      { text: "Cancel", style: "cancel" },
       {
-        text: "Удалить",
+        text: "Delete",
         style: "destructive",
         onPress: () => deletePost(postId),
       },
@@ -59,17 +59,19 @@ const PostsScreen = ({ navigation }) => {
   };
 
   const renderItem = ({ item }) => {
+   
     const isOwner =
-      userId && item.userId && String(item.userId) === String(userId);
+      userId && item.userId
+        ? String(userId) === String(item.userId)
+        : false;
 
     return (
       <View style={{ marginBottom: 20 }}>
-
-        {/* IMAGE */}
+      
         <View style={styles.photoWrapper}>
           <Image source={{ uri: item.photo }} style={styles.photo} />
 
-          {/* BUTTONS */}
+      
           {isOwner && (
             <View style={styles.actions}>
               <TouchableOpacity
@@ -91,10 +93,10 @@ const PostsScreen = ({ navigation }) => {
           )}
         </View>
 
-        {/* TITLE */}
-        <Text style={styles.name}>Название: {item.name}</Text>
+       
+        <Text style={styles.name}>Name: {item.name}</Text>
 
-        {/* ACTIONS ROW */}
+      
         <View style={styles.wrapperDescr}>
           <TouchableOpacity
             style={styles.inputWrapper}

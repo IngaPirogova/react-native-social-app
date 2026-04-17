@@ -63,13 +63,12 @@ export const authSignInUser = (body) => async (dispatch) => {
       );
     }
 
-    // ✔ важно: вернуть success
     return { success: true };
 
   } catch (error) {
     console.log("LOGIN ERROR:", error.code);
 
-    // ❗ ВАЖНО: пробрасываем ошибку наружу
+    
     return Promise.reject({
       code: error.code,
       message: error.message,

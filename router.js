@@ -34,7 +34,7 @@ const MainNavigator = () => (
       name="Map"
       component={MapScreen}
       options={{
-        title: "Карта",
+        title: "Map",
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "Roboto-Medium",
@@ -48,7 +48,7 @@ const MainNavigator = () => (
       name="Comments"
       component={CommentsScreen}
       options={{
-        title: "Комментарии",
+        title: "Comments",
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "Roboto-Medium",
@@ -62,7 +62,7 @@ const MainNavigator = () => (
       name="EditPost"
       component={EditPostScreen}
       options={{
-        title: "Редактирование",
+        title: "Editing",
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "Roboto-Medium",
@@ -73,7 +73,7 @@ const MainNavigator = () => (
   </MainStack.Navigator>
 );
 
-// 🔥 ROUTE SWITCH
+//  ROUTE SWITCH
 export const useRoute = (isAuth) => {
   return isAuth ? <MainNavigator /> : <AuthNavigator />;
 };

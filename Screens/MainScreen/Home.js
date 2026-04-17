@@ -25,7 +25,7 @@ const Home = () => {
         name="Posts"
         component={PostsScreen}
         options={{
-          title: "Публикации",
+          title: "Posts",
           headerRight: () => (
             <TouchableOpacity
               style={{ paddingRight: 16 }}
@@ -52,7 +52,7 @@ const Home = () => {
         name="CreatePosts"
         component={CreatePostsScreen}
         options={{
-          title: "Создать публикацию",
+          title: "Create a post",
           tabBarIcon: ({ focused, color, size }) => (
             <View
               style={[
@@ -71,7 +71,7 @@ const Home = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: "Профиль",
+          title: "Profile",
           tabBarIcon: ({ focused, color, size }) => (
             <View
               style={[

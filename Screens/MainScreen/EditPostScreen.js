@@ -36,7 +36,7 @@ const EditPostScreen = ({ route, navigation }) => {
             />
 
             <TouchableOpacity style={styles.btn} onPress={saveChanges}>
-                <Text style={{ color: "#fff" }}>Сохранить</Text>
+                <Text style={{ color: "#fff" }}>SafeAreaView</Text>
             </TouchableOpacity>
         </View>
     );

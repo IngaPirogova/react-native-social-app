@@ -96,7 +96,7 @@ const CommentsScreen = ({ route }) => {
           <View style={styles.inputWrapper}>
             <TextInput
               style={styles.input}
-              placeholder="Комментировать..."
+              placeholder="Comment..."
               value={newComment}
               onChangeText={setNewComment}
             />

@@ -33,26 +33,26 @@ export default function LoginScreen({ navigation }) {
 
             Toast.show({
                 type: "success",
-                text1: "Добро пожаловать 👋",
+                text1: "Welcome 👋",
             });
 
            
         } catch (error) {
             console.log("LOGIN ERROR:", error);
 
-            let message = "Ошибка входа";
+            let message = "Login error";
 
             if (error.code === "auth/wrong-password") {
-                message = "Неверный пароль";
+                message = "Invalid password";
             }
 
             if (error.code === "auth/user-not-found") {
-                message = "Пользователь не найден";
+                message = "User not found";
             }
 
             Toast.show({
                 type: "error",
-                text1: "Ошибка",
+                text1: "Error",
                 text2: message,
             });
         }
@@ -94,11 +94,11 @@ export default function LoginScreen({ navigation }) {
                             />
 
                             <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
-                                <Text style={{ color: "#fff" }}>Войти</Text>
+                                <Text style={{ color: "#fff" }}>Login</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity onPress={() => navigation.navigate("Registration")}>
-                                <Text style={{ marginTop: 20 }}>Регистрация</Text>
+                                <Text style={{ marginTop: 20 }}>Registration</Text>
                             </TouchableOpacity>
 
                         </View>

@@ -1,14 +1,16 @@
-import { useSelector } from "react-redux";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { useRoute } from "../router";
+import { useSelector } from "react-redux";
 
+import { useRoute } from "../router"; // путь поправь если другой
 
 const Main = () => {
-  const { stateChange, loading } = useSelector((state) => state.auth);
+  const { isAuth, stateChange } = useSelector((state) => state.auth);
 
-  if (loading) return null; 
+  const routing = useRoute(isAuth);
 
-  const routing = useRoute(stateChange);
+  
+  if (!stateChange) return null;
 
   return <NavigationContainer>{routing}</NavigationContainer>;
 };

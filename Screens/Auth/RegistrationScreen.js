@@ -31,12 +31,12 @@ export default function RegistrationScreen({ navigation }) {
 
     Keyboard.dismiss();
 
-    // ✅ базовая валидация
+    
     if (!state.userEmail.includes("@")) {
       Toast.show({
         type: "error",
-        text1: "Ошибка",
-        text2: "Введите корректный email",
+        text1: "Error",
+        text2: "Enter a correct email",
       });
       return;
     }
@@ -44,8 +44,8 @@ export default function RegistrationScreen({ navigation }) {
     if (state.password.length < 6) {
       Toast.show({
         type: "error",
-        text1: "Ошибка",
-        text2: "Минимум 6 символов",
+        text1: "Error",
+        text2: "Minimum 6 characters",
       });
       return;
     }
@@ -53,8 +53,8 @@ export default function RegistrationScreen({ navigation }) {
     if (!state.nickName) {
       Toast.show({
         type: "error",
-        text1: "Ошибка",
-        text2: "Введите ник",
+        text1: "Error",
+        text2: "Enter nickname",
       });
       return;
     }
@@ -66,30 +66,30 @@ export default function RegistrationScreen({ navigation }) {
 
       Toast.show({
         type: "success",
-        text1: "Аккаунт создан 🎉",
+        text1: "Account created 🎉",
       });
 
     
     } catch (error) {
       console.log("SIGNUP ERROR:", error?.code);
 
-      let message = "Ошибка регистрации";
+      let message = "Registration error";
 
       if (error?.code === "auth/email-already-in-use") {
-        message = "Email уже используется";
+        message = "Email already in use";
       }
 
       if (error?.code === "auth/invalid-email") {
-        message = "Некорректный email";
+        message = "Incorrect email";
       }
 
       if (error?.code === "auth/weak-password") {
-        message = "Пароль слишком слабый";
+        message = "The password is too weak";
       }
 
       Toast.show({
         type: "error",
-        text1: "Ошибка",
+        text1: "Error",
         text2: message,
       });
     } finally {
@@ -104,7 +104,7 @@ export default function RegistrationScreen({ navigation }) {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
         <ScrollView contentContainerStyle={styles.container}>
-          <Text style={styles.title}>Регистрация</Text>
+          <Text style={styles.title}>Registration</Text>
 
           <TextInput
             placeholder="Nickname"
@@ -143,14 +143,14 @@ export default function RegistrationScreen({ navigation }) {
             disabled={loading}
           >
             <Text style={{ color: "#fff" }}>
-              {loading ? "Загрузка..." : "Зарегистрироваться"}
+              {loading ? "Loading..." : "Register"}
             </Text>
           </TouchableOpacity>
 
           {/* КНОПКА НАЗАД */}
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={{ marginTop: 20, textAlign: "center" }}>
-              Уже есть аккаунт? Войти
+              Already have an account? Log in
             </Text>
           </TouchableOpacity>
         </ScrollView>

@@ -89,8 +89,8 @@ const CreatePostsScreen = ({ navigation }) => {
       if (!photo || !name) {
         Toast.show({
           type: "error",
-          text1: "Ошибка",
-          text2: "Заполни все поля",
+          text1: "Error",
+          text2: "Fill in all fields",
         });
         return;
       }
@@ -112,8 +112,8 @@ const CreatePostsScreen = ({ navigation }) => {
 
       Toast.show({
         type: "success",
-        text1: "Готово 🎉",
-        text2: "Пост успешно опубликован",
+        text1: "Ready🎉",
+        text2: "Post successfully published",
       });
 
       setPhoto(null);
@@ -126,8 +126,8 @@ const CreatePostsScreen = ({ navigation }) => {
 
       Toast.show({
         type: "error",
-        text1: "Ошибка",
-        text2: "Не удалось опубликовать пост",
+        text1: "Error",
+        text2: "Failed to publish post",
       });
     } finally {
       setLoading(false);
@@ -180,7 +180,7 @@ const CreatePostsScreen = ({ navigation }) => {
             )}
 
             <TextInput
-              placeholder="Название..."
+              placeholder="Name..."
               value={name}
               onChangeText={setName}
               style={styles.input}
@@ -202,7 +202,7 @@ const CreatePostsScreen = ({ navigation }) => {
                 <ActivityIndicator color="#fff" />
               ) : (
                 <Text style={{ color: "#fff" }}>
-                  Опубликовать
+                      Publish
                 </Text>
               )}
               </TouchableOpacity>
