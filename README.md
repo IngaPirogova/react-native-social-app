@@ -46,29 +46,15 @@ eas build --platform android
 
 ---
 
-
 ## 📸 Screenshots
 
-<p align="center">
+<p align="center" margin-bottom="12px">
   <img src="assets/screenshots/register.png" width="250"/>
-  <br><br>
-
   <img src="assets/screenshots/login.png" width="250"/>
-  <br><br>
-
-  <img src="assets/screenshots/profile.png" width="250"/>
-  <br><br>
-
+  <img src="assets/screenshots/profile.png" width="250"/><br><br>
   <img src="assets/screenshots/create.png" width="250"/>
-  <br><br>
-
   <img src="assets/screenshots/posts.png" width="250"/>
-  <br><br>
-
-  <img src="assets/screenshots/comments.png" width="250"/>
-  <br><br>
-
-  <img src="assets/screenshots/map.png" width="250"/>
+  <img src="assets/screenshots/comments.png" width="250"/>  
 </p>
 
 ---
