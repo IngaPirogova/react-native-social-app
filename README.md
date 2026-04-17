@@ -54,8 +54,7 @@ eas build --platform android
   <img src="assets/screenshots/profile.png" width="250"/>
   <img src="assets/screenshots/create.png" width="250"/>
   <img src="assets/screenshots/posts.png" width="250"/>
-  <img src="assets/screenshots/comments.png" width="250"/>
-  <img src="assets/screenshots/map.png" width="250"/>
+  <img src="assets/screenshots/comments.png" width="250"/>  
 </p>
 
 ---
