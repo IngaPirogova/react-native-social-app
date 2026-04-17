@@ -47,46 +47,27 @@ eas build --platform android
 ---
 
 
-## 📸 App Preview
+## 📸 Screenshots
 
-### Register
 <p align="center">
   <img src="assets/screenshots/register.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Login
-<p align="center">
   <img src="assets/screenshots/login.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Profile
-<p align="center">
   <img src="assets/screenshots/profile.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Create Post
-<p align="center">
   <img src="assets/screenshots/create.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Feed
-<p align="center">
   <img src="assets/screenshots/posts.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Comments
-<p align="center">
   <img src="assets/screenshots/comments.png" width="250"/>
-</p>
-<br>
+  <br><br>
 
-### Map
-<p align="center">
   <img src="assets/screenshots/map.png" width="250"/>
 </p>
 
