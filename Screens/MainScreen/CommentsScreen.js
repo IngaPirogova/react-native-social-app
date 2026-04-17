@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F6F6",
     color: "#BDBDBD",
   },
+  
   iconWrapper: {
     position: "absolute",
     top: 24,
@@ -147,12 +148,10 @@ const styles = StyleSheet.create({
     height: 34,
     borderRadius: 34 / 2,
     backgroundColor: "#FF6C00",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  icon: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-  },
+  
 
 });
 

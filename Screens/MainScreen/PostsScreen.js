@@ -25,7 +25,6 @@ const PostsScreen = ({ navigation }) => {
   const [posts, setPosts] = useState([]);
 
   const userId = useSelector((state) => state.auth.userId);
-  
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "posts"), (snapshot) => {
@@ -60,6 +59,9 @@ const PostsScreen = ({ navigation }) => {
   };
 
   const renderItem = ({ item }) => {
+    const isOwner =
+      userId && item.userId && String(item.userId) === String(userId);
+
     return (
       <View style={{ marginBottom: 20 }}>
 
@@ -67,34 +69,33 @@ const PostsScreen = ({ navigation }) => {
         <View style={styles.photoWrapper}>
           <Image source={{ uri: item.photo }} style={styles.photo} />
 
-          {/* DELETE BUTTON */}
-          {item.userId === userId && (
-            <>
-              {/* EDIT */}
+          {/* BUTTONS */}
+          {isOwner && (
+            <View style={styles.actions}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("EditPost", { post: item })}
-                style={[styles.deleteBtn, { right: 50 }]}
+                onPress={() =>
+                  navigation.navigate("EditPost", { post: item })
+                }
+                style={styles.iconBtn}
               >
                 <Feather name="edit-2" size={18} color="#fff" />
               </TouchableOpacity>
 
-              {/* DELETE */}
               <TouchableOpacity
                 onPress={() => confirmDelete(item.postId)}
-                style={styles.deleteBtn}
+                style={styles.iconBtn}
               >
                 <Feather name="trash-2" size={18} color="#fff" />
               </TouchableOpacity>
-            </>
-          )     }
+            </View>
+          )}
         </View>
 
         {/* TITLE */}
         <Text style={styles.name}>Название: {item.name}</Text>
 
-        {/* ACTIONS */}
+        {/* ACTIONS ROW */}
         <View style={styles.wrapperDescr}>
-
           <TouchableOpacity
             style={styles.inputWrapper}
             onPress={() =>
@@ -124,7 +125,6 @@ const PostsScreen = ({ navigation }) => {
                   : "N/A"}
             </Text>
           </TouchableOpacity>
-
         </View>
       </View>
     );
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: "hidden",
     backgroundColor: "#eee",
+    position: "relative",
   },
 
   photo: {
@@ -162,10 +163,15 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 
-  deleteBtn: {
+  actions: {
     position: "absolute",
     top: 10,
     right: 10,
+    flexDirection: "row",
+    gap: 10,
+  },
+
+  iconBtn: {
     backgroundColor: "rgba(0,0,0,0.6)",
     padding: 8,
     borderRadius: 20,
