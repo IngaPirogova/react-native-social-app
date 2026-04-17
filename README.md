@@ -49,7 +49,7 @@ eas build --platform android
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./screenshots/register.png" width="250"/>
+  <img src=".assets/screenshots/register.png" width="250"/>
   <img src="./screenshots/login.png" width="250"/>
   <img src="./screenshots/profile.png" width="250"/>
   <img src="./screenshots/create.png" width="250"/>
