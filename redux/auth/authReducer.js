@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   userId: null,
   nickName: null,
-  stateChange: false,
-  isAuth: false,
   userEmail: null,
   avatar: null,
+  isAuth: false,
+  stateChange: false,
 };
 
 export const authSlice = createSlice({
@@ -22,10 +22,15 @@ export const authSlice = createSlice({
     },
 
     authStateChange: (state, { payload }) => {
-      state.stateChange = payload.stateChange;
-      state.isAuth = payload.stateChange;
+      state.stateChange = payload.stateChange; 
     },
 
-    authSignOut: () => initialState,
+    authSignOut: (state) => {
+      state.userId = null;
+      state.nickName = null;
+      state.userEmail = null;
+      state.avatar = null;
+      state.isAuth = false;
+    },
   },
 });

@@ -72,7 +72,7 @@ export default function LoginScreen({ navigation }) {
                     >
                         <View style={styles.loginWrapper}>
 
-                            <Text style={styles.title}>Войти</Text>
+                            <Text style={styles.title}>Login</Text>
 
                             <TextInput
                                 style={styles.input}

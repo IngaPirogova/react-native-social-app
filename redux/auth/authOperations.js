@@ -9,7 +9,9 @@ import {
 import { auth } from "../../firebase/config";
 import { authSlice } from "./authReducer";
 
-const { updateUserProfile, authStateChange } = authSlice.actions;
+const { updateUserProfile, authStateChange, authSignOut } =
+  authSlice.actions;
+
 
 export const authSignUpUser = (body) => async (dispatch) => {
   const { avatar, userEmail, nickName, password } = body;
@@ -36,13 +38,12 @@ export const authSignUpUser = (body) => async (dispatch) => {
     }
 
     return { success: true };
-
   } catch (error) {
     console.log("SIGNUP ERROR:", error.code);
-
     return Promise.reject(error);
   }
 };
+
 
 export const authSignInUser = (body) => async (dispatch) => {
   const { userEmail, password } = body;
@@ -64,17 +65,17 @@ export const authSignInUser = (body) => async (dispatch) => {
     }
 
     return { success: true };
-
   } catch (error) {
     console.log("LOGIN ERROR:", error.code);
 
-    
     return Promise.reject({
       code: error.code,
       message: error.message,
     });
   }
 };
+
+
 export const authStateCahngeUser = () => (dispatch) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -86,14 +87,25 @@ export const authStateCahngeUser = () => (dispatch) => {
           avatar: user.photoURL,
         })
       );
-
-      dispatch(authStateChange({ stateChange: true }));
     } else {
-      dispatch(authStateChange({ stateChange: false }));
+      
+      dispatch(authSignOut());
     }
+
+   
+    dispatch(authStateChange({ stateChange: true }));
   });
 };
 
+
 export const authSignOutUser = () => async (dispatch) => {
-  await signOut(auth);
+  try {
+    await signOut(auth);
+
+    
+    dispatch(authSignOut());
+
+  } catch (error) {
+    console.log("LOGOUT ERROR:", error);
+  }
 };
